@@ -62,6 +62,171 @@
 %\centerline{\bf EMII Homework I Due 2014/09/17}
 %\bigskip
 
+
+\textbf{2.}
+\\
+Let's do this the clunky matrix way first, and then we'll go back and pick up the boost as rotation method if time allows.  First, write down the matrix representations of the two successive boosts.  We won't worry abou the order of multiplication since our intent is to show that the result commutes in the end anyway.  First, fill in the components of the two Lorentz transforms keeping in mind that 
+\\
+$\Lambda^i_{\; j} = \delta_{ij} + \dfrac{\gamma - 1}{v^2} v_i v_j$
+\\
+We'll need this for part 2.d. if not sooner
+\\
+$\begin{pmatrix}
+\gamma_1 & -\gamma_1 v_1\\
+-\gamma_1 v_1 & \gamma_1\\
+\end{pmatrix} 
+\begin{pmatrix}
+\gamma_2 & -\gamma_2 v_2\\
+-\gamma_2 v_2 & \gamma_2\\
+\end{pmatrix} $
+\\
+$  = \gamma_1 \gamma_2 
+\begin{pmatrix}
+v_1 v_2 + 1 & -v_2 - v_1\\
+-v_1 - v_2 & v_1 v_2 + 1\\
+\end{pmatrix} $
+\\
+Now, if we just bludgeon through we get
+\\
+$\begin{pmatrix}
+\gamma_2 & -\gamma_2 v_2\\
+-\gamma_2 v_2 & \gamma_2\\
+\end{pmatrix} 
+\begin{pmatrix}
+\gamma_1 & -\gamma_1 v_1\\
+-\gamma_1 v_1 & \gamma_1\\
+\end{pmatrix} $
+\\
+$  = \gamma_1 \gamma_2 
+\begin{pmatrix}
+v_1 v_2 + 1 & -v_2 - v_1\\
+-v_1 - v_2 & v_1 v_2 + 1\\
+\end{pmatrix} $
+\\
+They produce the same results and therefore commute.  Since we can always adjust our coordinate system so that the velocities lie along the x axis, this result holds for any direction of velocity as long as both boosts are parallel as stated in the problem.
+\\
+\PRLsep
+\\
+Now, for the fun ways.  The first obvious solution is just to state the four velocity transform we derived in class and in the notes.  We have for the transformation of a velocity $u$ to a frame moving in the same direciton with the velocity $v$ that
+\\
+$u^\prime = \dfrac{u_x - v}{1-u_x v}$
+\\
+\\
+Suppose we had asked a differnt question, what if, of asking what the velocity transforms to in the moving frame, we asked what the velocity is if we boost the particle into the primed frame.  The answer would be
+\\
+$v_{lab} = \dfrac{u_x + v}{1+u_x v}$
+\\
+It is manifest that the expression commutes, and a quick glance ahead to the answer for 2b will show that it matches the clunkier result from working with matrices.
+\\
+\\
+Let's look at it yet another way.  We keep alluding to the fact that Lorentz transforms are rotation in space-time.  Let's see if there's a natural way to actually treat them as such and if so, how that helps.  Again, the  simple place to start is wth the four velocity.
+\\
+\\
+The 0 component of the four velocity is just $\gamma$.  Suppose we didn't set c to 1 in our expressions.  We'd have,
+\\
+\\
+$\gamma = \dfrac{1}{\sqrt{1 - \dfrac{v^2}{c^2}}}$
+\\
+$= \dfrac{1}{\dfrac{1}{c}\sqrt{c^2 - v^2}}$
+\\
+$= \dfrac{c}{\sqrt{c^2 - v^2}}$
+\\
+\\
+Those familiar with hyperbolic geometry will recognize this as the hyperbolic cosine of an angle where the hyptoenuse is $\sqrt{c^2 - v^2}$ and the adjacent side is $c$.
+\\
+\\
+The space component of four velocity can be written as, (taking a bit more care to place the factors of c back where they go using 7.2 in L\&L),
+\\
+$\gamma v = \dfrac{cv}{\sqrt{c^2 - v^2}} = c\;sinh\left(\phi\right)$
+\\
+\\
+Which is nothing more than a hyperbolic sine times a factor of c.  Here, the opposite side is $v$ and the hyptoenuse is of course the same.
+\\
+\\
+To relate these quantities back to labortory velocity, we'd need to remember that $\gamma = \dfrac{dt}{d\tau}$ and that the spatial portion of four velocity is expressed as $u = \dfrac{d\vec{x}}{d\tau}$.  Now, if we divide the hyperbolic sine by the hyperbolic cosine we get, 
+\\
+\\
+$\dfrac{c\;sinh\left(\phi\right)}{cosh\left(\phi\right)} = \dfrac{d\vec{x}}{d\tau} \dfrac{dt}{d\tau} = \dfrac{d\vec{x}}{dt} = tanh\left(\phi\right)$
+\\
+\\
+Which means that lab velocity can be written as
+\\
+\\
+$\dfrac{v}{c} = tanh\left(\phi\right)$
+\\
+\\
+and our hyperbolic angle can be written as 
+\\
+\\
+$\phi = atanh\left(\dfrac{v}{c}\right)$
+\\
+\\
+We're getting somewhwere, we know that angles in the same plane of a rotaiton simply add.  Can the same thing work here?  We'll have to find out later.
+\\
+\\
+\PRLsep
+\\
+\\
+Now, we have to show that result above is still a Lorentz boost.
+\\
+Let's suppose it is a Lorentz boost and see if things work out.  We start with
+\\
+$\gamma_1 \gamma_2 
+\begin{pmatrix}
+v_1 v_2 + 1 & -v_2 - v_1\\
+-v_1 - v_2 & v_1 v_2 + 1\\
+\end{pmatrix} $
+\\
+which can be rewritten suggestively as
+\\
+$\gamma_3 
+\begin{pmatrix}
+1 & \dfrac{-v_2 - v_1}{v_1 v_2 + 1}\\
+\dfrac{-v_1 - v_2}{v_1 v_2 + 1} & 1\\
+\end{pmatrix} $
+\\
+where 
+\\
+$\gamma_3 = \gamma_1 \gamma_2 \left(v_1 v_2 + 1\right)$
+\\
+It looks like our new velocity should be 
+\\
+$v_3 = \dfrac{v_2 + v_1}{1 + v_1 v_2}$
+\\
+Let's see if this works out in terms of our new gamma.  I'll work with $\gamma^{-1}$ just to avoid working in denominators all day, and then I'll take the reciprocal of the result at the end.
+\\
+\\
+$1 - v_3^2 = 1 - \dfrac{v_1^2 + 2v_1^2 v_2^2 + v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2}$
+\\
+\\
+Setting terms over the same common denominator we get:
+\\
+\\
+$= \dfrac{1 + 2 v_1 v_2 + v_1^2 v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2} - \dfrac{v_1^2 + 2v_1^2 v_2^2 + v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2}$
+\\
+\\
+Simplifying gives:
+\\
+\\
+$= \dfrac{1 - v_1^2 - v_2^2 + v_1^2 + v_2^2}{1 + 2 v_1 v_2 + v_1^2 v_2^2}$
+\\
+\\
+Taking the square root gives
+\\
+\\
+$\sqrt{1 - v_3^2} = \dfrac{\sqrt{1-v_1^2}\sqrt{1-v_2^2}}{1+ v_1 v_2}$
+\\
+\\
+Taking the reciprocal, we get 
+\\
+\\
+$\gamma_3 = \dfrac{1+ v_1 v_2}{\sqrt{1-v_1^2}\sqrt{1-v_2^2}} = \gamma_1 \gamma_2 \left(1+ v_1 v_2\right)$
+\\
+\\
+which is the gamma factor required for the resultant velocity.
+\\
+\PRLsep
+\\
 \textbf{3.}
 \\
 \\
