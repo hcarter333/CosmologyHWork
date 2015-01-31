@@ -1,0 +1,204 @@
+
+\documentclass[prb,preprint]
+{revtex4-1} 
+% The line above defines the type of LaTeX document.
+% Note that AJP uses the same style as Phys. Rev. B (prb).
+
+% The % character begins a comment, which continues to the end of the line.
+
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+\newcommand{\PRLsep}{\noindent\makebox[\linewidth]{\resizebox{0.8888\linewidth}{2pt}{$\bullet$}}\bigskip}
+
+\begin{document}
+
+% Be sure to use the \title, \author, \affiliation, and \abstract macros
+% to format your title page.  Don't use lower-level macros to  manually
+% adjust the fonts and centering.
+
+\title{Cosmology Homework I Due 2015/02/06}
+% In a long title you can use \\ to force a line break at a certain location.
+
+\author{Hamilton B. Carter}
+\email{hcarter333@tamu.edu} % optional
+% optional second address
+% If there were a second author at the same address, we would put another 
+% \author{} statement here.  Don't combine multiple authors in a single
+% \author statement.
+\affiliation{Department of Physics, Texas A\&M University, College Station, TX 77843}
+% Please provide a full mailing address here.
+
+% See the REVTeX documentation for more examples of author and affiliation lists.
+
+\date{\today}
+
+%\begin{abstract}
+
+
+%\end{abstract}
+% AJP requires an abstract for all regular article submissions.
+% Abstracts are optional for submissions to the "Notes and Discussions" section.
+
+
+
+
+\maketitle % title page is now complet
+
+%\newpage
+%\section{Board 1}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{board1_2014_06_24.jpg}
+% Notice the width specification.  Photographs should normally have a
+% resolution of approximately 300 pixels per inch when printed, that is,
+% a total width of about 1000 pixels for a photo to be printed one column
+% wide.  Note also that this included photo is in .jpg format even though 
+% a .tiff version should be submitted for final production.
+%\caption{Board 1)}
+%\label{Board 1}
+%\end{figure}
+%\centerline{\bf EMII Homework I Due 2014/09/17}
+%\bigskip
+
+\textbf{3.}
+\\
+\\
+We need to find out if $ds^2$, the four-space line element is invariant under a given transformation.
+The given transformation is 
+\\
+\\
+$t' = \dfrac{1}{g}\left(e^{gz}\right)sinh\left(gt\right)$
+\\
+\\
+$z' = \dfrac{1}{g}\left(e^{gz}\right)cosh\left(gt\right)$
+\\
+\\
+So,
+\\
+\\
+$dt' = \dfrac{1}{g}g\left(e^{gz}\right)sinh\left(gt\right)dz + \dfrac{1}{g}g\left(e^{gz}\right)cosh\left(gt\right)dt$
+\\
+\\
+$dz' = \dfrac{1}{g}g\left(e^{gz}\right)cosh\left(gt\right)dz + \dfrac{1}{g}g\left(e^{gz}\right)sinh\left(gt\right)dt$
+\\
+\\
+$dt^{\prime 2} = e^{2gz}sinh^2\left(gt\right)dz^2 + e^{2gz}cosh^2\left(gt\right)dt^2$
+\\
+\\
+Where the mixed differentials have been omitted because they will cancel with the mixed terms from $dz^{\prime 2}$.
+\\
+\\
+$dz^{\prime 2} = e^{2gz}cosh^2\left(gt\right)dz^2 + e^{2gz}sinh^2\left(gt\right)dt^2$
+\\
+\\
+$ds^{\prime 2} = dt^{\prime 2} - dz^{\prime 2} = e^{2gz}sinh^2\left(gt\right)dz^2 + e^{2gz}cosh^2\left(gt\right)dt^2 - \left(e^{2gz}cosh^2\left(gt\right)dz^2 + e^{2gz}sinh^2\left(gt\right)dt^2\right)$
+\\
+\\
+$= e^{2gz}\left(sinh^2\left(gt\right) - cosh^2\left(gt\right)\right)dz^2 + e^{2gz}\left(cosh^2\left(gt\right) - sinh^2\left(gt\right)\right)dt^2$
+\\
+\\
+\framebox{$ds^{\prime 2} = e^{2gz}\left(dt^2 - dz^2\right)$}
+\\
+\\
+\framebox{Consequently, $ds^{\prime 2}$ is not invariant in this metric.}
+\\
+\\
+Just as a quick check, what if we had factored the $gz$ term back in as a phase to the $sinh$ and $cosh$ functions right away?  How would that have changed things?  Can the $e^{gz}$ even be factored back in as a phase?
+\\
+\\
+$sinh$ can be written as 
+\\
+\\
+$sinh\left(x\right) = \dfrac{e^x +e^{-x}}{2}$
+\\
+\\
+Factoring the $e^{gz}$ back in gives us
+\\
+\\
+$\dfrac{e^{gt + gz} +e^{-gt + gz}}{2}$
+\\
+\\
+So, it looks like life is good.  We can't get back to a single $sinh$ or $cosh$ when you take the $gz$ back into the expression.
+\\
+\\
+\textbf{Questions}
+The metric given for this problem looks like the Davies and Birrell form of the Rindler coordinates.  However, if we write down Rindler coordinates from Rindler's "Special Relativity" book, (1960, p. 41), they are:
+\\
+\\
+$t = \dfrac{1}{g}sinh\left(g \tau\right)$
+\\
+\\
+$z = \dfrac{1}{g}cosh\left(g \tau\right) - \dfrac{1}{g}$
+\\
+\\
+While the missing leading exponential term, (since it's not there), will not cause the final result to not be invariant in $ds^2$, other issues may.  Playing the same $dt^2 - dz^2$ trick as above, (even though we're not looking at the primed, but the unprimed frame), results in 
+\\
+\\
+$ds^2 = dt^2 - dz^2 = cosh^2\left(g\tau\right)d\tau^2 - sinh^2\left(g\tau\right)d\tau^2$
+\\
+\\
+or $ds^2 = d\tau^2$
+\\
+\\
+This seems to indicate that Rindler coordinates maintain an invariance in $ds$ even though they incorporate acceleration and a non-inertial frame.  It would also seem to indicate that the metric given in this problem is not in fact the same as Rindler coordinates.
+\\
+\\
+\PRLsep
+
+
+% If your manuscript is conditionally accepted, the editors will ask you to
+% submit your editable LaTeX source file.  Before doing so, you should move
+% all tables and figure captions to the end, as shown below.  Tables come 
+% first, followed by figure captions (with figure inclusions commented-out).
+% Figures should be submitted as separate files, collected with the
+% LaTeX file into a single .zip archive.
+
+%\newpage   % Start a new page for tables
+
+%\begin{table}[h!]
+%\centering
+%\caption{Elementary bosons}
+%\begin{ruledtabular}
+%\begin{tabular}{l c c c c p{5cm}}
+%Name & Symbol & Mass (GeV/$c^2$) & Spin & Discovered & Interacts with \\
+%\hline
+%Photon & $\gamma$ & \ \ 0 & 1 & 1905 & Electrically charged particles \\
+%Gluons & $g$ & \ \ 0 & 1 & 1978 & Strongly interacting particles (quarks and gluons) \\
+%Weak charged bosons & $W^\pm$ & \ 82 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$, $\gamma$ \\
+%Weak neutral boson & $Z^0$ & \ 91 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$ \\
+%Higgs boson & $H$ & 126 & 0 & 2012 & Massive particles (according to theory) \\
+%\end{tabular}
+%\end{ruledtabular}
+%\label{bosons}
+%\end{table}
+
+%\newpage   % Start a new page for figure captions
+
+%\section*{Figure captions}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics{GasBulbData.eps}   % This line stays commented-out
+%\caption{Pressure as a function of temperature for a fixed volume of air.  
+%The three data sets are for three different amounts of air in the container. 
+%For an ideal gas, the pressure would go to zero at $-273^\circ$C.  (Notice
+%that this is a vector graphic, so it can be viewed at any scale without
+%seeing pixels.)}
+
+%\label{gasbulbdata}
+%\end{figure}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{ThreeSunsets.jpg}   % This line stays commented-out
+%\caption{Three overlaid sequences of photos of the setting sun, taken
+%near the December solstice (left), September equinox (center), and
+%June solstice (right), all from the same location at 41$^\circ$ north
+%latitude. The time interval between images in each sequence is approximately
+%four minutes.}
+%\label{sunsets}
+%\end{figure}
+
+\end{document}
