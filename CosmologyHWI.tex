@@ -63,6 +63,81 @@
 %\bigskip
 
 
+\textbf{1.}
+\\
+Because it's more fun and the methodology produces results similar to the given information for problem number 3, I'll follow Karapetoff\cite{karapetoff1}, (the article is also attached to the email that submitted this homework), in writing down the Lorentz transform as:
+$\Lambda^\alpha_{\;\beta} = \begin{pmatrix}
+cosh\left(u\right) & -sinh\left(u\right)\\
+-sinh\left(u\right) & cosh\left(u\right)\\
+\end{pmatrix} 
+ $
+\\
+\\
+Now, we can write down the transformation as 
+\\
+\\
+$\begin{pmatrix}
+dx^\prime\\
+dt^\prime\\
+\end{pmatrix} = \begin{pmatrix}
+cosh\left(u\right) & -sinh\left(u\right)\\
+-sinh\left(u\right) & cosh\left(u\right)\\
+\end{pmatrix} 
+\begin{pmatrix}
+dx\\
+dt\\
+\end{pmatrix}
+ $
+\\
+\\
+or, 
+\\
+\\
+$dx^\prime = dx\;cosh\left(u\right) - dt\;sinh\left(u\right)$
+\\
+$dt^\prime = dt\;cosh\left(u\right) - dx\;sinh\left(u\right)$
+\\
+\\
+Now, if we calculate $ds^{\prime 2}$, we get
+\\
+\\
+$ds{\prime 2} = dt^{\prime 2} - dx^{\prime 2}$
+\\
+$= dt^2\;cosh^2\left(u\right) + dx^2\;sinh^2\left(u\right) - dx^2\;cosh^2\left(u\right) - dt^2\;sinh^2\left(u\right)$
+\\
+$= dt^2 - dx^2$
+\\
+\\
+So,
+\\
+\\
+$ds^{\prime 2} = ds^2$
+\\
+\\
+This leaves the question as to where we incorporated $\vec{v}$.  If we consider a simple event where a particle stays at its origin the primed frame, then, plugging in $0$ for $x^\prime$ in the transformation, 
+\\
+\\
+$dx^\prime = dx\;cosh\left(u\right) - dt\;sinh\left(u\right)$
+\\
+\\
+We get 
+\\
+\\
+$\dfrac{dx}{dt} = tanh\left(u\right)$
+\\
+\\
+or,
+\\
+\\
+$u = atanh\left(v\right)$
+\\
+\\
+Where it should be remembered that we have set $c = 1$.  
+\\
+\\
+\PRLsep
+\\
+\newpage
 \textbf{2.}
 \\
 Let's do this the clunky matrix way first, and then we'll go back and pick up the boost as rotation method if time allows.  First, write down the matrix representations of the two successive boosts.  We won't worry abou the order of multiplication since our intent is to show that the result commutes in the end anyway.  First, fill in the components of the two Lorentz transforms keeping in mind that 
@@ -311,7 +386,54 @@ This seems to indicate that Rindler coordinates maintain an invariance in $ds$ e
 \\
 \\
 \PRLsep
+\newpage
+\textbf{4.}
+\\
+The line element for spherical coordinates is 
+\\
+\\
+$ds^2 = dr^2 + r^2d\theta^2 + r^2in^2\theta d\phi^2$
+\\
+\\
+The inverse metric can be obtained by inverting the following matrix
+\\
+\\
+$\begin{pmatrix}
+dr^2 & 0 ^ 0\\
+0 & r^2d\theta^2 & 0\\
+0 & 0 & r^2\;sin^2\;\theta\;d\phi^2\\
+\end{pmatrix}$
+\\
+\\
+This gives
+\\
+\\
+$\begin{pmatrix}
+\dfrac{1}{dr^2} & 0 ^ 0\\
+0 & \dfrac{1}{r^2d\theta^2} & 0\\
+0 & 0 & \dfrac{csc^2\theta}{r^2\;d\phi^2}\\
+\end{pmatrix}$
+\\
+\\
+When $r = R$, the two dimensional metric is 
+\\
+\\
+$ds^2 = R^2\left(d\theta^2 + sin^2\theta d\phi^2\right)$
+\\
+\PRLsep
+\newpage
+\begin{thebibliography}{99}
+% The numeral (here 99) in curly braces is nominally the number of entries in
+% the bibliography. It's supposed to affect the amount of space around the
+% numerical labels, so only the number of digits should matter--and even that
+% seems to make no discernible difference.
+% The issue number (3) in this citation is optional, because AJP's pagination 
+% is by volume.
 
+\bibitem{karapetoff1} Karapetoff, V., ``Restricted Theory of Relativity in Terms of Hyperbolic Functions of Rapidities", The American Mathematical Monthly, \textbf{43}, 70--82 (1936).  
+
+
+\end{thebibliography}
 
 % If your manuscript is conditionally accepted, the editors will ask you to
 % submit your editable LaTeX source file.  Before doing so, you should move
