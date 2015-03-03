@@ -130,10 +130,6 @@
 
 
 (* ::Input:: *)
-(*affineFirstKind*)
-
-
-(* ::Input:: *)
 (*affine:=affine=Simplify[Table[(1/2)*Sum[(inversemetric[[i,s]])**)
 (*(D[metric[[s,j]],coord[[k]] ]+*)
 (*D[metric[[s,k]],coord[[j]] ]-D[metric[[j,k]],coord[[s]] ]),{s,1,n}],*)
@@ -153,23 +149,11 @@
 
 
 (* ::Input:: *)
-(*affine*)
-
-
-(* ::Input:: *)
 (*TableForm[Partition[DeleteCases[Flatten[listaffine],Null],2],TableSpacing->{2,2}]*)
 
 
 (* ::Input:: *)
 (*listaffineFirstKind:=Table[If[UnsameQ[affineFirstKind[[i,j,k]],0],{ToString[\[Gamma][i,j,k]],affineFirstKind[[i,j,k]]}] ,{i,1,n},{j,1,i},{k,1,n}]*)
-
-
-(* ::Input:: *)
-(*listaffineFirstKind*)
-
-
-(* ::Input:: *)
-(*listaffine*)
 
 
 (* ::Input:: *)
